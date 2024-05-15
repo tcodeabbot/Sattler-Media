@@ -1,2 +1,0 @@
-# Sattler-Media
-Sattler Media
