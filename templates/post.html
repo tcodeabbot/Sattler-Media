@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Create Post
+{% endblock %}
+
+{% block main %}
+<div class="r-bar" >
+    <div class="post-div">
+        <div class="post">
+            <div style="padding: 10px 0 5px 23px;border-bottom: 1px solid #FAEBD7;">
+                <span style="font-size: 25px;">Create a Post</span>
+            </div>
+            <div class="post-title">
+                <div class="post-avt">
+                    <img src="/static/images/avatar.jpg" alt="">
+                </div>
+                <div class="post-user">
+                    <div class="post-username">
+                        <span class="post-username-name">Abbot</span>
+                        <span class="post-username-id">@abbot</span>
+                    </div>
+                    <div class="post-date">
+                        <span >{{date}}</span>
+                    </div>
+                </div>
+            </div>
+            <form action="/new_post" enctype="multipart/form-data" method="post">
+                <div class="post-cont">
+                    <div class="post-text">
+                        <textarea name="post_data" id="post_data" placeholder="What's on your mind ?" ></textarea>
+                    </div>
+                </div>
+                <div class="post-controls">
+                        <div class="post-new-image">
+                            <div class="col-12 text-start">
+                                <input type="file" class="form-control" id="file-input" name="image" />
+                            </div>
+                            <div class="post-button-post-newpost">
+                                <button id="post-submit" type="submit">Post</button>
+                            </div>
+                        </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</div>
+{% endblock %}

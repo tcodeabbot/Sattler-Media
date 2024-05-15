@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+
+<!-- LEFT NAVBAR FOR Home, Profile, Notifications -->
+<div class="l-bar">
+    <a href="/"><img src="/static/images/logo.png" class="logo" alt="logo"></a>
+    <div class="nav-menu">
+        <div class="nav-menu-left"><a href="/" style="font-weight: 600;"><img src="/static/images/home.png"> <span>Home</span></a></div>
+        <div class="nav-menu-left"><a href="/profile"><img src="/static/images/profile-logo.jpeg"> <span>Profile</span></a></div>
+        <div class="nav-menu-left"><a href="/notifications"><img src="/static/images/notifications-icon.png"> <span>Notifications</span></a></div>
+        <div class="nav-menu-left"><a href="/logout"><img src="/static/images/logout-icon.jpg"> <span>Logout</span></a></div>
+    </div>
+    <div class="nav-newpost">
+        <div class="nav-bottom-new-post"><a href="/post"><button class="btn-newpost">New Post</button></a></div>
+    </div>
+</div>
+
+<!-- RIGHT WINDOW FOR POSTS -->
+
+<div class="r-bar">
+    <div class="post-container">
+        {% for post in posts %}
+        <!-- SCROLL ANIMATIONS FROM THE Animate on scroll library -->
+            <div class="post" data-aos="fade-up" data-aos-duration="1500">
+                <div class="post-title">
+                    <div class="post-avt">
+                        <a href="/"><img src="/static/images/media-avatar.png" alt="avatar-profile-picture"></a>
+                    </div>
+                    <div class="post-user">
+                        <div class="post-username">
+                            <div class="flex post-profile">
+                                <span class="post-name"><a href="/">{{ user.name }}</a></span>
+                                <span class="post-username-id"><a href="/">@{{ post.username }}</a></span>
+                            </div>
+                            <!-- <span class="post-username-name"><a href="/">{{ post.name }}</a></span> -->
+                        </div>
+                        <div class="post-date">
+                            <span>Posted on : {{ post.posted_at }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="post-cont">
+                    <div class="post-text text-start">
+                        <span>{{ post.post }}</span>
+                    </div>
+                    <div class="post-img">
+                        <img src="{{ post.image }}">
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

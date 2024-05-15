@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block main %}
+<div class="profile-div">
+    <div class="profile-barner">
+        <img class="profile-banner-img" src="/static/images/banner.png" />
+    </div>
+    <div class="profile-details">
+        <div class="profile-item">
+            <strong><span>Name:</span></strong>  <span>{{user.username}}</span>
+        </div>
+        <div class="profile-item">
+            <strong><span>Username:</span></strong>  <span>{{user.username}}</span>
+        </div>
+        <div class="profile-item">
+            <strong><span>Current ID:</span></strong>  <span>@{{user.username}}</span>
+        </div>
+        <div class="profile-item">
+            <strong><span>Bio:</span></strong>  <span>{{user.bio}}</span>
+        </div>
+    </div>
+</div>
+{% endblock %}

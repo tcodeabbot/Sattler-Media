@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Notifications
+{% endblock %}
+
+{% block main %}
+
+<div class="profile-barner">
+    <img class="profile-banner-img" src="/static/images/banner.png" />
+</div>
+
+{% for post in posts %}
+
+    <div class="notifications">
+        <div class="notification">
+            <div class="notifications-container">
+                <strong>Post ID:</strong><span>{{post.user_id}}</span>
+                <strong>Posted on:</strong><span>{{post.posted_at}}</span>
+                <strong>Posted by:</strong><span>{{post.username}}</span>
+            </div>
+        </div>
+    </div>
+
+{% endfor %}
+
+{% endblock %}
